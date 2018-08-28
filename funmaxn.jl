@@ -53,10 +53,37 @@ function maxn(M::AbstractArray, k::Integer, dim::Integer)
     end
     return B
 end
+
+function maxn2(M::AbstractArray, k::Integer)
+    nlen=prod(size(M))
+    if k> nlen || k< 1
+        error("error length")
+    elseif k>0 && k< 11
+        println("suggest use maxn instead for more speed")
+    end
+    A=M[1:k];
+    A=sort(A,rev=true);
+    for i=k+1:nlen
+        for j= k:-1:1
+            if M[i]<A[j]
+            break
+        end
+        if j< k-1
+           A=[A[1:j];M[i];A[j+1:k-1]]; 
+        end
+    end
+    A=sort(A,rev=true);
+    return A
+end
 """
 A=rand(4,5)
 
 maxn(A,2,1)
 
 maxn(A,2,2)
+
+A=rand(Int16,10000);
+    
+maxn2(A,100);
+    
 """
