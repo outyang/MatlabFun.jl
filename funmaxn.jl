@@ -1,4 +1,3 @@
-﻿
 function maxn(M::AbstractArray, k::Integer)
     nlen=prod(size(M))
     if k> nlen || k< 1

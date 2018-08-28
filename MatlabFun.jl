@@ -1,4 +1,3 @@
-﻿
 function eye(::Type{T}, m::Integer, n::Integer) where T
     mab=min(m*n,m^2)
     A=zeros(T,m,n);
