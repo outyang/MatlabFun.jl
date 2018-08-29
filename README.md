@@ -1,2 +1,2 @@
-      MatFun.jl is a set of common function rewrite in julia 1.0.if any bugs find in it,please report it on our github homepage.
+      MatFun.jl is a set of common function rewrite in julia 1.0 and a set of function list similar in both language.if find any bugs or wrong in our function table(dict.xlsx) ,please report it on our github homepage.
   

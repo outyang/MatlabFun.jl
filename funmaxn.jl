@@ -1,4 +1,6 @@
-function maxn(M::AbstractArray, k::Integer)
+# suguest to use julia function partialsortperm instead of this.
+# we have an easy use in dict.xlsx and some function both have or similar.
+function maxk(M::AbstractArray, k::Integer)
     nlen=prod(size(M))
     if k> nlen || k< 1
         error("error length")
@@ -27,7 +29,7 @@ function maxn(M::AbstractArray, k::Integer)
     return A
 end
 # suguest to use other function if k is bigger
-function maxn(M::AbstractArray, k::Integer, dim::Integer) 
+function maxk(M::AbstractArray, k::Integer, dim::Integer) 
     if ndims(M)>2
         error("only spport ndims= 1 , 2")
     elseif dim>2 || dim<1
@@ -45,7 +47,7 @@ function maxn(M::AbstractArray, k::Integer, dim::Integer)
     elseif dim==2
         for i=1:m
             temp=M[i,:];
-            vtemp=maxn(temp,k);
+            vtemp=maxk(temp,k);
             v0=[v0;vtemp];
         end
         B=reshape(v0,k,m);
@@ -54,7 +56,7 @@ function maxn(M::AbstractArray, k::Integer, dim::Integer)
     return B
 end
 
-function maxn2(M::AbstractArray, k::Integer)
+function maxk2(M::AbstractArray, k::Integer)
     nlen=prod(size(M))
     if k> nlen || k< 1
         error("error length")
