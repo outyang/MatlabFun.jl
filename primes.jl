@@ -8,9 +8,7 @@ function primes2(maxn::Int64)
             end
         end
     end
-    p = (1:half)[p]
-    p .*= 2
-    p .-= 1
+    p = (1:2:maxn)[p]
     p[1] = 2
     return p
 end
